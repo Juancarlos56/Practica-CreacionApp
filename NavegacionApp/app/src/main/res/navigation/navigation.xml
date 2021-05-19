@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="ec.edu.ups.navegacionapp.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_datosPersonalesFragment"
+            app:destination="@id/datosPersonalesFragment" />
+        <argument
+            android:name="age"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/datosPersonalesFragment"
+        android:name="ec.edu.ups.navegacionapp.DatosPersonalesFragment"
+        android:label="fragment_datos_personales"
+        tools:layout="@layout/fragment_datos_personales" >
+        <action
+            android:id="@+id/action_datosPersonalesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="Juan Carlos" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="ec.edu.ups.navegacionapp.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+</navigation>
